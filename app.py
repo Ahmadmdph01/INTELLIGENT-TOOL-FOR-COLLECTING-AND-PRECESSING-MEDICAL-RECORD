@@ -105,7 +105,7 @@ if rad == "Login":
         if username and password:
             st.success("Logged in successfully!")
             # Display user input in a table
-            user_data = {'Username': [username], 'Password': [password]}
+            user_data = {'Username': [Admin], 'Password': [12345]}
             user_df = pd.DataFrame(user_data)
             st.table(user_df)
         else:
