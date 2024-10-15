@@ -29,7 +29,7 @@ model2.fit(x2_train, y2_train)
 if rad == "Diabetes Section":
     st.header("Measure risk of Diabetes for Patient")
     st.write("All The Values Should Be In Range Mentioned")
-    insulin = st.text("Enter Your Name", min_value=0, max_value=850, step=1)
+    insulin = st.text("Enter Your Name")
     glucose = st.number_input("Enter Your Glucose Level (0-200)", min_value=0, max_value=200, step=1)
     insulin = st.number_input("Enter Your Insulin Level In Body (0-850)", min_value=0, max_value=850, step=1)
     bmi = st.number_input("Enter Your Body Mass Index/BMI Value (0-70)", min_value=0, max_value=70, step=1)
