@@ -53,6 +53,8 @@ model3.fit(x3_train, y3_train)
 
 # Heart Disease Page
 if rad == "Heart Disease Section":
+    name = st.text_input("Enter Your Name")
+    address = st.text_input("Enter Your Address")
     st.header("Measure risk of Heart Disease for Patient")
     st.write("All The Values Should Be In Range Mentioned")
     chestpain = st.number_input("Rate Your Chest Pain (1-4)", min_value=1, max_value=4, step=1)
