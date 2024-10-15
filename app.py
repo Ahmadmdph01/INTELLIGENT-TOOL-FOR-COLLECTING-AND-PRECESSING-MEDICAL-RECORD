@@ -99,8 +99,8 @@ if rad == "User Information":
 
 # Add login page and display user input in a table
 if rad == "Login":
-    username = st.text_input("Admin")
-    password = st.text_input("Password", type='12345')
+    username = st.text_input("Username")
+    password = st.text_input("Password", type='Password')
     if st.button("Login"):
         if username and password:
             st.success("Logged in successfully!")
