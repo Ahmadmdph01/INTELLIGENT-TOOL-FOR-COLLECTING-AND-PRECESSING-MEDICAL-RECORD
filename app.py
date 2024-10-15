@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Sidebar navigation
-rad = st.sidebar.radio("Navigation Menu", ["Home", "Diabetes Section", "Heart Disease Section", "Plots"])
+rad = st.sidebar.radio("Navigation Menu", ["Home", "Diabetes Section", "Heart Disease Section", "Plots", "User Information"])
 
 # Home Page
 if rad == "Home":
@@ -29,7 +29,7 @@ model2.fit(x2_train, y2_train)
 if rad == "Diabetes Section":
     st.header("Measure risk of Diabetes for Patient")
     st.write("All The Values Should Be In Range Mentioned")
-    insulin = st.text("Enter Your Name")
+    name = st.text_input("Enter Your Name")
     glucose = st.number_input("Enter Your Glucose Level (0-200)", min_value=0, max_value=200, step=1)
     insulin = st.number_input("Enter Your Insulin Level In Body (0-850)", min_value=0, max_value=850, step=1)
     bmi = st.number_input("Enter Your Body Mass Index/BMI Value (0-70)", min_value=0, max_value=70, step=1)
@@ -78,6 +78,21 @@ if rad == "Plots":
     elif type == "Heart Disease":
         fig = px.scatter(df3, x="BP", y="Heart Disease")
         st.plotly_chart(fig)
+
+# User Information Page
+if rad == "User Information":
+    st.header("User Information Input")
+    user_name = st.text_input("Enter Your Name")
+    user_address = st.text_input("Enter Your Address")
+    
+    if st.button("Submit"):
+        if user_name and user_address:
+            st.success("Information Submitted Successfully!")
+            user_data = {'Name': [user_name], 'Address': [user_address]}
+            user_df = pd.DataFrame(user_data)
+            st.table(user_df)
+        else:
+            st.error("Please enter both name and address.")
 
 # Add login page and display user input in a table
 if rad == "Login":
