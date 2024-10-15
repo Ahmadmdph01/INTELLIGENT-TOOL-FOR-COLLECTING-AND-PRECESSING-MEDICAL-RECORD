@@ -81,7 +81,20 @@ if rad == "Plots":
     elif type == "Heart Disease":
         fig = px.scatter(df3, x="BP", y="Heart Disease")
         st.plotly_chart(fig)
-
+# User Information Page
+if rad == "User Information":
+    st.header("User Information Input")
+    user_name = st.text_input("Enter Your Name")
+    user_address = st.text_input("Enter Your Address")
+    
+    if st.button("Submit"):
+        if user_name and user_address:
+            st.success("Information Submitted Successfully!")
+            user_data = {'Name': [user_name], 'Address': [user_address]}
+            user_df = pd.DataFrame(user_data)
+            st.table(user_df)
+        else:
+            st.error("Please enter both name and address.")
 
 
 # Add login page and display user input in a table
